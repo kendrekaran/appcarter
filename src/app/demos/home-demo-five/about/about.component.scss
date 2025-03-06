@@ -1,0 +1,94 @@
+.data-section {
+    background-color: #f8fcfe;
+}
+.data-content {
+    h3 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .bar {
+        height: 4px;
+        width: 85px;
+        background: var(--main-color);
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--white-color);
+            animation: {
+                duration: 2s;
+                timing-function: linear;
+                iteration-count: infinite;
+                name: MOVE-BG;
+            };
+        }
+    }
+}
+.data-inner-content {
+    background-color: var(--white-color);
+    padding: 30px;
+
+    i {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        background-color: var(--main-color);
+        color: var(--white-color);
+        text-align: center;
+        border-radius: 5px;
+    }
+    h3 {
+        font-size: 22px;
+        margin: 15px 0 2px 0;
+    }
+    &.bg-facf34 {
+        i {
+            background-color: #facf34;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .data-content {
+        h3 {
+            font-size: 24px;
+        }
+    }
+    .data-inner-content {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .data-inner-content {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

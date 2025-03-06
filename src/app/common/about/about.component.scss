@@ -1,0 +1,370 @@
+.creative-content {
+    h3 {
+        font-size: 40px;
+        position: relative;
+        margin-bottom: 16px;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+        }
+    }
+    span {
+        color: var(--main-color);
+    }
+    .bar {
+        height: 4px;
+        width: 85px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        background: var(--main-color);
+
+        &::before {
+            top: 0;
+            left: 0;
+            width: 5px;
+            content: '';
+            height: 100%;
+            position: absolute;
+            background: var(--white-color);
+            animation: {
+                duration: 2s;
+                name: MOVE-BG;
+                timing-function: linear;
+                iteration-count: infinite;
+            };
+        }
+    }
+}
+.skill-bar {
+    margin-top: 35px;
+
+    .progress-title-holder {
+        margin-bottom: 10px;
+    }
+    .progress-title {
+        color: var(--black-color);
+        font: {
+            size: 18px;
+            weight: 600;
+        };
+    }
+    .progress-parcentage {
+        color: var(--black-color);
+        font: {
+            size: 16px;
+            weight: 500;
+        };
+    }
+    .progress-content-outter {
+        height: 6px;
+        border-radius: 4px;
+        background-color: #e4e4e4;
+    }
+    .progress-content {
+        width: 0;
+        height: 6px;
+        border-radius: 4px;
+        background: linear-gradient(to right, #bcf2f5, #b0eaf7, #a9e0f9, #a7d6f9, #abcbf6);
+    }
+}
+.creative-image {
+    height: 100%;
+    position: relative;
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        position: center center;
+    };
+    img {
+        display: none;
+    }
+    .video-btn {
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        padding: 0;
+        width: 90px;
+        height: 90px;
+        border-width: 0;
+        font-size: 35px;
+        line-height: 90px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        display: inline-block;
+        color: var(--black-color);
+        transition: var(--transition);
+        background-color: var(--white-color);
+        transform: translateY(-50%) translateX(-50%);
+
+        &::after {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--white-color);
+            animation: ripple 2s linear 1s infinite;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--white-color);
+            animation: ripple 2s linear infinite;
+        }
+        &:hover {
+            background-color: var(--main-color);
+            color: var(--white-color);
+        }
+    }
+}
+.about-tab {
+    max-width: 620px;
+    padding: 100px 0;
+    margin-left: 50px;
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 14px;
+
+        span {
+            color: var(--main-color);
+        }
+    }
+    .bar {
+        height: 4px;
+        width: 85px;
+        background: var(--main-color);
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--white-color);
+            animation: {
+                duration: 2s;
+                timing-function: linear;
+                iteration-count: infinite;
+                name: MOVE-BG;
+            };
+        }
+    }
+    .about-list-tab {
+        .tabs {
+            border-bottom: 1px solid #eeeeee;
+            padding-left: 0;
+            margin: {
+                bottom: 30px;
+                top: 20px;
+            };
+            li {
+                padding: 0;
+                margin-right: 30px;
+                display: inline-block;
+
+                button {
+                    position: relative;
+                    display: block;
+                    font-weight: 600;
+                    padding: 0;
+                    border-width: 0;
+                    padding-bottom: 10px;
+                    background-color: transparent;
+
+                    &.active {
+                        color: var(--main-color);
+                        border-bottom: 2px solid var(--main-color);
+                    }
+                }
+            }
+        }
+        .tab_content {
+            .tabs_item {
+                .text {
+                    h3 {
+                        font-size: 22px;
+                        margin-bottom: 0;
+                    }
+                }
+                .list {
+                    padding-left: 0;
+                    margin: {
+                        top: 20px;
+                        bottom: 20px;
+                    };
+                    li {
+                        list-style-type: none;
+                        margin-bottom: 12px;
+                        font: {
+                            weight: 600;
+                        };
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                    i {
+                        color: var(--main-color);
+                        margin-right: 5px;
+                    }
+                }
+                p {
+                    margin-bottom: 0;
+                }
+                .default-btn {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+.about-image {
+    height: 100%;
+    background: {
+        size: cover;
+        position: center center;
+        repeat: no-repeat;
+    };
+    img {
+        display: none;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .creative-content {
+        h3 {
+            font-size: 24px;
+        }
+    }
+    .creative-image {
+        background-image: unset !important;
+        margin-top: 30px;
+        height: auto;
+
+        img {
+            display: inline-block;
+        }
+    }
+    .skill-bar {
+        margin-top: 25px;
+    
+        .progress-title {
+            font-size: 16px;
+        }
+        .progress-parcentage {
+            font-size: 16px;
+        }
+    }
+    .about-image {
+        height: auto;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+    .about-tab {
+        padding: 35px 0;
+        margin-left: 0;
+        padding-bottom: 0;
+
+        h2 {
+            font-size: 20px;
+        }
+        .about-list-tab {
+            .tab_content {
+                .tabs_item {
+                    .list {
+                        li {
+                            font-size: 14px;
+                        }
+                    }
+                    .default-btn {
+                        margin-top: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .creative-image {
+        height: auto;
+        margin-top: 30px;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+    .about-tab {
+        padding: 35px 0;
+        margin-left: 0;
+        padding-bottom: 0;
+    }
+    .about-image {
+        height: auto;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .creative-content {
+        h3 {
+            font-size: 35px;
+        }
+    }
+    .about-tab {
+        margin-left: 15px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+    
+    .container-fluid {
+        max-width: 1920px;
+    }
+
+}

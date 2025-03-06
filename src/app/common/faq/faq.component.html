@@ -1,0 +1,90 @@
+<div class="faq-section pb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Frequently <span>Asked</span> Questions</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt labore et dolore magna aliqua.</p>
+            <div class="bar"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="faq-accordion">
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" (click)="toggleSection(0)" [ngClass]="{ 'open': isSectionOpen(0) }">
+                                What access do I have on the free plan? <i class='bx bx-chevron-down'></i>
+                            </button>
+                        </div>
+                        <div class="collapse" [ngClass]="{ 'show': isSectionOpen(0) }">
+                            <div class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" (click)="toggleSection(1)" [ngClass]="{ 'open': isSectionOpen(1) }">
+                                What access do I have on a free trial? <i class='bx bx-chevron-down'></i>
+                            </button>
+                        </div>
+                        <div class="collapse" [ngClass]="{ 'show': isSectionOpen(1) }">
+                            <div class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" (click)="toggleSection(2)" [ngClass]="{ 'open': isSectionOpen(2) }">
+                                Does the price go up as my team gets larger? <i class='bx bx-chevron-down'></i>
+                            </button>
+                        </div>
+                        <div class="collapse" [ngClass]="{ 'show': isSectionOpen(2) }">
+                            <div class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" (click)="toggleSection(3)" [ngClass]="{ 'open': isSectionOpen(3) }">
+                                How can I cancel my subscription? <i class='bx bx-chevron-down'></i>
+                            </button>
+                        </div>
+                        <div class="collapse" [ngClass]="{ 'show': isSectionOpen(3) }">
+                            <div class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <button type="button" (click)="toggleSection(4)" [ngClass]="{ 'open': isSectionOpen(4) }">
+                                Can I pay via an Invoice? <i class='bx bx-chevron-down'></i>
+                            </button>
+                        </div>
+                        <div class="collapse" [ngClass]="{ 'show': isSectionOpen(4) }">
+                            <div class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="faq-image">
+                    <img src="images/faq.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+.go-top {
+	background-color: var(--main-color);
+    transition: var(--transition);
+	color: var(--white-color);
+	text-align: center;
+    border-radius: 50%;
+    line-height: 40px;
+	position: fixed;
+	cursor: pointer;
+	height: 40px;
+    bottom: 25px;
+	right: 25px;
+	width: 40px;
+	z-index: 4;
+    
+    i {
+        left: 0;
+        right: 0;
+        top: 50%;
+        font-size: 30px;
+        margin: 0 auto;
+        position: absolute;
+        transform: translateY(-50%);
+        transition: var(--transition);
+
+        &:last-child {
+            visibility: hidden;
+            opacity: 0;
+            top: 60%;
+        }
+    }
+    &:hover {
+        color: var(--white-color);
+        background: var(--black-color);
+
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+        i {
+            &:first-child {
+                top: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:last-child {
+                visibility: visible;
+                opacity: 1;
+                top: 50%;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .go-top {
+        bottom: 15px;
+        right: 15px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .go-top {
+        bottom: 20px;
+        right: 20px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

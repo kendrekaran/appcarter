@@ -1,0 +1,125 @@
+.app-content {
+    padding-left: 15px;
+
+    h3 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .bar {
+        height: 4px;
+        width: 85px;
+        background: var(--main-color);
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--white-color);
+            animation: {
+                duration: 2s;
+                timing-function: linear;
+                iteration-count: infinite;
+                name: MOVE-BG;
+            };
+        }
+    }
+}
+.app-inner-text {
+    position: relative;
+    margin-top: 30px;
+    padding-left: 85px;
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        background-color: var(--main-color);
+        color: var(--white-color);
+        text-align: center;
+        font-size: 35px;
+        border-radius: 50px;
+    }
+    h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .app-content {
+        margin-top: 30px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .app-inner-text {
+        padding-left: 75px;
+        
+        .icon {
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .app-content {
+        margin-top: 30px;
+    }
+    .app-inner-text {
+        padding-left: 70px;
+        .icon {
+            i {
+                height: 60px;
+                width: 60px;
+                line-height: 60px;
+                font-size: 24px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .app-content {
+        h3 {
+            font-size: 38px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

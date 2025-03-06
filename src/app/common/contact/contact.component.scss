@@ -1,0 +1,105 @@
+.contact-text {
+    margin-bottom: 30px;
+
+    h2 {
+        margin-bottom: 10px;
+        font: {
+            size: 40px;
+        };
+        span {
+            color: var(--main-color);
+        }
+    }
+}
+.contact-form {
+    background-color: var(--white-color);
+    box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+    padding: 35px;
+
+    form {
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        .form-control {
+            height: 48px;
+            padding: 0 15px;
+            line-height: initial;
+            color: var(--black-color);
+            background-color: #f8f6f6;
+            border: 1px solid #f8f6f6;
+            border-radius: 5px;
+            transition: var(--transition);
+            box-shadow: unset !important;
+            font: {
+                size: 14px;
+                weight: 400;
+            };
+            &:focus {
+                border-color: var(--main-color);
+            }
+            &::placeholder {
+                color: #999999;
+            }
+        }
+        textarea.form-control {
+            height: auto !important;
+            padding-top: 15px;
+        }
+    }
+    .send-btn {
+        margin-top: 10px;
+        transition: var(--transition);
+
+        .default-btn {
+            border: none;
+            display: inline-block;
+            width: 100%;
+            transition: var(--transition);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .contact-text {
+        h2 {
+            font-size: 28px;
+        }
+    }
+    .contact-image {
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .contact-image {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .contact-form {
+        padding: 16px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

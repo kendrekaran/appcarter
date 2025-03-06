@@ -1,0 +1,203 @@
+.main-banner-area-five {
+    border-bottom: 1px solid #f3f3f3;
+    position: relative;
+    overflow: hidden;
+    height: 880px;
+    z-index: 1;
+
+    .main-banner-content {
+        position: relative;
+        margin-left: auto;
+        max-width: 635px;
+        overflow: hidden;
+
+        h1 {
+            font-size: 70px;
+            margin: 10px 0 15px 0;
+            color: var(--black-color);
+        }
+        span {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black-color);
+        }
+        p {
+            color: var(--black-color);
+            margin-bottom: 0;
+        }   
+        .banner-btn {
+            margin-top: 30px;
+            
+            
+            .default-btn {
+                padding: 15px 35px;
+              
+                border-radius: 30px;
+                position: relative;
+                transition: all 0.3s ease;
+                font-weight: 600;
+                font-size: 16px;
+                display: inline-block;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 255, 255, 0.1);
+                    transition: all 0.5s ease;
+                }
+                
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                    
+                    &::before {
+                        left: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .banner-image {
+        margin-top: 60px;
+        text-align: end;
+        position: relative;
+        overflow: hidden;
+        
+        img {
+            transition: transform 0.5s ease;
+        }
+    }
+    .banner-shape {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .main-banner-area-five {
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-top: 1px solid #f3f3f3;
+
+        .main-banner-content {
+            text-align: center;
+
+            h1 {
+                font-size: 26px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        .banner-image {
+            margin-top: 30px;
+        }
+        
+        .banner-shape {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .container-fluid {
+        max-width: 540px;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .main-banner-area-five {
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        border-top: 1px solid #f3f3f3;
+
+        .main-banner-content {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            h1 {
+                font-size: 40px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        .banner-image {
+            margin-top: 30px;
+        }
+        .banner-shape {
+            display: none;
+        }
+    }
+    .container-fluid {
+        max-width: 720px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .main-banner-area-five {
+        height: 800px;
+
+        .main-banner-content {
+            margin-left: 0;
+            max-width: 100%;
+
+            h1 {
+                font-size: 60px;
+            }
+        }
+        .banner-shape {
+            max-width: 1000px;
+        }
+    }
+    .container-fluid {
+        max-width: 960px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .main-banner-area-five {
+        .main-banner-content {
+            margin-left: 0;
+            max-width: 100%;
+        }
+    }
+    .container-fluid {
+        max-width: 1140px;
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .container-fluid {
+        max-width: 1920px;
+    }
+
+}

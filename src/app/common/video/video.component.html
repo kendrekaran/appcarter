@@ -1,0 +1,36 @@
+<div
+    class="video-section"
+    style="background-image: url(images/video-bg.jpg);"
+>
+    <div class="container">
+        <div class="video-content">
+            <button type="button" class="video-btn popup-youtube" (click)="openPopup()">
+                <i class="flaticon-play"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div
+    class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+    *ngIf="isOpen"
+    tabindex="-1"
+>
+    <div class="mfp-container mfp-iframe-holder">
+        <div class="mfp-content">
+            <div class="mfp-iframe-scaler">
+                <button
+                    (click)="closePopup()"
+                    title="Close (Esc)"
+                    type="button"
+                    class="mfp-close"
+                >
+                    ×
+                </button>
+                <iframe src="https://www.youtube.com/embed/_ZppXdKk4c8" title="Introducing Trezo | The Next-Generation Multi-Framework Admin Dashboard Template" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mfp-bg mfp-fade mfp-ready" *ngIf="isOpen"></div>

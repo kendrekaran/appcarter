@@ -1,0 +1,113 @@
+<div class="creative-section pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="creative-content">
+                    <h3>How to Generate <span>Creative</span> Ideas for <span>your</span> IT Business</h3>
+                    <div class="bar"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt  labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus do  umsan lacus vel facilisis.Lorem Ipsum is simply dummy text of the industry. Lorem Ipsum has been the industry's.</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress-title-holder d-flex align-items-center justify-content-between">
+                        <span class="progress-title">
+                            Developement
+                        </span>
+                        <span class="progress-parcentage">
+                            75%
+                        </span>
+                    </div>
+                    <div class="progress-content-outter">
+                        <div class="progress-content" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress-title-holder d-flex align-items-center justify-content-between">
+                        <span class="progress-title">
+                            Design
+                        </span>
+                        <span class="progress-parcentage">
+                            45%
+                        </span>
+                    </div>
+                    <div class="progress-content-outter">
+                        <div class="progress-content" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress-title-holder d-flex align-items-center justify-content-between">
+                        <span class="progress-title">
+                            Marketing
+                        </span>
+                        <span class="progress-parcentage">
+                            80%
+                        </span>
+                    </div>
+                    <div class="progress-content-outter">
+                        <div class="progress-content" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress-title-holder d-flex align-items-center justify-content-between">
+                        <span class="progress-title">
+                            Support
+                        </span>
+                        <span class="progress-parcentage">
+                            70%
+                        </span>
+                    </div>
+                    <div class="progress-content-outter">
+                        <div class="progress-content" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="progress-title-holder d-flex align-items-center justify-content-between">
+                        <span class="progress-title">
+                            Review
+                        </span>
+                        <span class="progress-parcentage">
+                            90%
+                        </span>
+                    </div>
+                    <div class="progress-content-outter">
+                        <div class="progress-content" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div
+                    class="creative-image"
+                    style="background-image: url(images/about/about.jpg);"
+                >
+                    <img src="images/about/about.jpg" alt="image">
+                    <button type="button" class="video-btn popup-youtube" (click)="openPopup()">
+                        <i class="flaticon-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div
+    class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+    *ngIf="isOpen"
+    tabindex="-1"
+>
+    <div class="mfp-container mfp-iframe-holder">
+        <div class="mfp-content">
+            <div class="mfp-iframe-scaler">
+                <button
+                    (click)="closePopup()"
+                    title="Close (Esc)"
+                    type="button"
+                    class="mfp-close"
+                >
+                    ×
+                </button>
+                <iframe src="https://www.youtube.com/embed/_ZppXdKk4c8" title="Introducing Trezo | The Next-Generation Multi-Framework Admin Dashboard Template" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mfp-bg mfp-fade mfp-ready" *ngIf="isOpen"></div>
