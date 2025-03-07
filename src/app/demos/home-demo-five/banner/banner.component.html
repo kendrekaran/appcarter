@@ -1,31 +1,187 @@
-<div class="main-banner-area-five ">
+<div class="main-banner-area-five">
     <div class="container-fluid">
-        <div class="row align-items-center xl:pb-32">
-            <div class="col-lg-6 col-md-12">
-                <div class="main-banner-content">
-                    <span>Welcome To Appcarter</span>
-                    <h1>Audit Software For Sustainable Excellence</h1>
-                    <div class="banner-btn">
-                        <button class="default-btn">Demo</button>
-                    </div>
-                    
-                </div>
+      <div class="row align-items-center xl:pb-32">
+        <div class="col-lg-6 col-md-12">
+          <div class="main-banner-content">
+            <span>Welcome To Appcarter</span>
+            <h1>Audit Software For Sustainable Excellence</h1>
+            <div class="banner-btn">
+              <button class="default-btn" (click)="openDemoModal()">Demo</button>
             </div>
-            <div class="col-lg-6  col-md-12 md:pb-44">
-                <div class="banner-image">
-                    <img src="images/home-five/1.png" alt="image">
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-6 col-md-12 md:pb-44">
+          <div class="banner-image">
+            <img src="images/phone.png" alt="image">
+          </div>
+        </div>
+      </div>
     </div>
     <div class="default-shape">
-        <div class="shape-1"><img src="images/shape/4.png" alt="image"></div>
-        <div class="shape-2 rotateme"><img src="images/shape/5.svg" alt="image"></div>
-        <div class="shape-3"><img src="images/shape/6.svg" alt="image"></div>
-        <div class="shape-4"><img src="images/shape/7.png" alt="image"></div>
-        <div class="shape-5"><img src="images/shape/8.png" alt="image"></div>
+      <div class="shape-1"><img src="images/shape/4.png" alt="image"></div>
+      <div class="shape-2 rotateme"><img src="images/shape/5.svg" alt="image"></div>
+      <div class="shape-3"><img src="images/shape/6.svg" alt="image"></div>
+      <div class="shape-4"><img src="images/shape/7.png" alt="image"></div>
+      <div class="shape-5"><img src="images/shape/8.png" alt="image"></div>
     </div>
     <div class="banner-shape md:py-32">
-        <img src="images/home-five/shape.png" alt="image">
+      <img src="images/home-five/shape.png" alt="image">
     </div>
-</div>
+  </div>
+  
+  <!-- Demo Registration Modal -->
+  <div class="demo-modal" *ngIf="showDemoModal">
+    <div class="modal-overlay" (click)="closeDemoModal()"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2>Register For Demo</h2>
+        <button class="close-btn" (click)="closeDemoModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Success Message -->
+        <div class="success-message" *ngIf="submitSuccess">
+          <div class="success-icon">✓</div>
+          <h3>Registration Successful!</h3>
+          <p>Thank you for registering. We'll be in touch soon.</p>
+        </div>
+        
+        <!-- Registration Form -->
+        <form [formGroup]="demoForm" (ngSubmit)="submitDemoRequest()" *ngIf="!submitSuccess">
+          <!-- Error Message -->
+          <div class="error-alert" *ngIf="submitError">
+            {{ submitError }}
+          </div>
+          
+          <div class="form-group">
+            <label for="name">Name:<span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              placeholder="Enter your full name"
+              [ngClass]="{'invalid': demoForm.get('name')?.invalid && demoForm.get('name')?.touched}"
+            >
+            <span class="error-message" *ngIf="demoForm.get('name')?.invalid && demoForm.get('name')?.touched">
+              Name is required
+            </span>
+          </div>
+          
+          <div class="form-group">
+            <label for="companyName">Company Name:<span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="companyName" 
+              formControlName="companyName" 
+              placeholder="Enter your company name"
+              [ngClass]="{'invalid': demoForm.get('companyName')?.invalid && demoForm.get('companyName')?.touched}"
+            >
+            <span class="error-message" *ngIf="demoForm.get('companyName')?.invalid && demoForm.get('companyName')?.touched">
+              Company name is required
+            </span>
+          </div>
+          
+          <div class="form-group">
+            <label for="emailId">Email:</label>
+            <input 
+              type="email" 
+              id="emailId" 
+              formControlName="emailId" 
+              placeholder="Enter your email address"
+              [ngClass]="{'invalid': demoForm.get('emailId')?.invalid && demoForm.get('emailId')?.touched}"
+            >
+            <span class="error-message" *ngIf="demoForm.get('emailId')?.invalid && demoForm.get('emailId')?.touched">
+              Please enter a valid email
+            </span>
+          </div>
+          
+          <div class="form-group">
+            <label for="mobileNo">Mobile:</label>
+            <input 
+              type="tel" 
+              id="mobileNo" 
+              formControlName="mobileNo" 
+              placeholder="Enter your mobile number"
+              [ngClass]="{'invalid': demoForm.get('mobileNo')?.invalid && demoForm.get('mobileNo')?.touched}"
+            >
+            <span class="error-message" *ngIf="demoForm.get('mobileNo')?.invalid && demoForm.get('mobileNo')?.touched">
+              Please enter a valid 10-digit mobile number
+            </span>
+          </div>
+          
+          <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input 
+              type="text" 
+              id="designation" 
+              formControlName="designation" 
+              placeholder="Enter your designation"
+            >
+          </div>
+          
+          <div class="form-group schedule-demo">
+            <label>Schedule Demo:<span class="required">*</span></label>
+            
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button type="button" class="month-nav" (click)="prevMonth()">&lt;</button>
+                <span>{{ formatMonth(selectedDate) }}</span>
+                <button type="button" class="month-nav" (click)="nextMonth()">&gt;</button>
+              </div>
+              
+              <div class="calendar-days">
+                <div class="weekday" *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
+                  {{ day }}
+                </div>
+                
+                <ng-container *ngFor="let date of getCurrentMonthDays()">
+                  <button 
+                    type="button"
+                    class="day" 
+                    [ngClass]="{
+                      'selected': selectedDate.getDate() === date.getDate() && 
+                                  selectedDate.getMonth() === date.getMonth(),
+                      'today': isToday(date),
+                      'disabled': isPastDate(date)
+                    }"
+                    [disabled]="isPastDate(date)"
+                    (click)="selectDate(date)"
+                  >
+                    {{ date.getDate() }}
+                  </button>
+                </ng-container>
+              </div>
+            </div>
+            
+            <div class="time-selector">
+              <p>Select Time:</p>
+              <div class="time-slots">
+                <button 
+                  *ngFor="let time of availableTimes" 
+                  type="button"
+                  [ngClass]="{'selected': selectedTime === time}"
+                  (click)="selectTime(time)"
+                >
+                  {{ time }}
+                </button>
+              </div>
+              <span class="error-message" *ngIf="demoForm.get('scheduleDateTime')?.invalid && demoForm.get('scheduleDateTime')?.touched">
+                Please select a date and time
+              </span>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button 
+              type="submit" 
+              class="submit-btn" 
+              [disabled]="isSubmitting"
+            >
+              <span *ngIf="!isSubmitting">Schedule Demo</span>
+              <span *ngIf="isSubmitting" class="spinner"></span>
+            </button>
+            <button type="button" class="cancel-btn" (click)="closeDemoModal()" [disabled]="isSubmitting">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

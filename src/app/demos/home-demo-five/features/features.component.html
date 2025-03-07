@@ -15,12 +15,15 @@
 
         <!-- Features Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Feature Card Template - Repeat for each feature -->
+            <!-- Feature Card Template -->
             <div *ngFor="let feature of features" 
                  class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
                 <!-- Icon Container -->
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-r {{ feature.gradient }} flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-300">
-                    <i [class]="feature.icon" class="text-2xl text-white"></i>
+                <div class="w-16 h-16  rounded-2xl bg-gradient-to-r {{feature.gradient}} flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-300">
+                    <img [src]="feature.image" 
+                         [alt]="feature.title"
+                         class="w-16 h-16 mb-2 object-contain"
+                         onError="this.src='/images/feature-icons/default.png'" />
                 </div>
 
                 <!-- Content -->
