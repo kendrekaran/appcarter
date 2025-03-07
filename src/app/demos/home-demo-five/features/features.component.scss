@@ -1,0 +1,255 @@
+// features-section.component.scss
+
+:host {
+    --main-color: #2d5bff;
+    --white-color: #ffffff;
+    --transition: all 0.5s ease;
+  }
+  
+  .ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .learn-content {
+    h3 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-bottom: 0;
+    }
+    
+    .bar {
+      height: 4px;
+      width: 85px;
+      background: var(--main-color);
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 20px;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background: var(--white-color);
+        animation: {
+          duration: 2s;
+          timing-function: linear;
+          iteration-count: infinite;
+          name: MOVE-BG;
+        };
+      }
+    }
+    
+    .learn-list {
+      padding-left: 0;
+      position: relative;
+      margin: {
+        top: 20px;
+        bottom: 30px;
+      };
+      
+      li {
+        list-style-type: none;
+        margin-bottom: 12px;
+        font: {
+          size: 16px;
+          weight: 600;
+        };
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      
+      i {
+        color: var(--main-color);
+        margin-right: 3px;
+        font-size: 20px;
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+  
+  .learn-inner-content {
+    background-color: var(--white-color);
+    box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+    border-radius: 10px;
+  
+    &.mb-30 {
+      margin-bottom: 30px;
+    }
+    
+    .icon {
+      height: 70px;
+      width: 70px;
+      line-height: 70px;
+      background-color: var(--main-color);
+      color: var(--white-color);
+      font-size: 35px;
+      border-radius: 50px;
+      transition: var(--transition);
+      margin: {
+        left: auto;
+        right: auto;
+      };
+      
+      &.bg-ba60fc {
+        background-color: #ba60fc;
+      }
+      
+      &.bg-04cfc4 {
+        background-color: #04cfc4;
+      }
+      
+      &.bg-f9b854 {
+        background-color: #f9b854;
+      }
+    }
+    
+    h3 {
+      font-size: 22px;
+      margin: 25px 0 8px 0;
+      transition: var(--transition);
+    }
+    
+    p {
+      margin-bottom: 0;
+      transition: var(--transition);
+    }
+    
+    .read-btn {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 0%;
+      background: var(--main-color);
+      transition: var(--transition);
+      border-radius: 12px;
+    }
+    
+    &:hover {
+      box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+  
+      &::before {
+        height: 100%;
+      }
+      
+      h3 {
+        color: var(--white-color);
+      }
+      
+      p {
+        color: var(--white-color);
+      }
+      
+      .read-btn {
+        color: var(--white-color);
+      }
+      
+      .icon {
+        background-color: var(--white-color);
+        color: var(--main-color);
+      }
+    }
+  }
+  
+  @keyframes MOVE-BG {
+    from {
+      transform: translateX(-85px);
+    }
+    to {
+      transform: translateX(85px);
+    }
+  }
+  
+  /* Media Queries */
+  @media only screen and (max-width: 767px) {
+    .learn-content {
+      h3 {
+        font-size: 24px;
+      }
+      
+      .learn-list {
+        li {
+          font-size: 14px;
+        }
+      }
+    }
+    
+    .learn-inner-content {
+      margin-top: 30px;
+      padding: 20px;
+  
+      &.mb-30 {
+        margin-bottom: 0;
+        margin-top: 30px;
+      }
+  
+      .icon {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        font-size: 25px;
+      }
+  
+      h3 {
+        font-size: 20px;
+      }
+  
+      .read-btn {
+        font-size: 14px;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .learn-inner-content {
+      margin-top: 30px;
+      padding: 20px;
+  
+      &.mb-30 {
+        margin-bottom: 0;
+        margin-top: 30px;
+      }
+      
+      .icon {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        font-size: 25px;
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .learn-inner-content {
+      padding: 20px;
+  
+      h3 {
+        font-size: 22px;
+      }
+    }
+  }

@@ -26,6 +26,12 @@
     z-index: 1;
     transition: var(--transition);
     box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.11);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 
     .icon {
         transition: var(--transition);
@@ -355,6 +361,70 @@
     }
 }
 
+.service-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal-content {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+
+        h2 {
+            color: var(--black-color);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            color: var(--black-color);
+            margin: 1rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                margin-bottom: 0.5rem;
+                padding-left: 1.5rem;
+                position: relative;
+
+                &:before {
+                    content: "•";
+                    color: var(--main-color);
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+
+        .close-button {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black-color);
+            
+            &:hover {
+                color: var(--main-color);
+            }
+        }
+    }
+}
+
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
 
@@ -381,7 +451,3 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {}
 
 /* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
-
-/* Min width 1600px */
-@media only screen and (min-width: 1600px) {}

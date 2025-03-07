@@ -1,17 +1,14 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
     selector: 'app-services',
-    imports: [RouterLink, NgClass, NgIf],
+    imports: [RouterLink, NgClass],
     templateUrl: './services.component.html',
-    styleUrl: './services.component.scss'
+    styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
-
-    constructor(
-        public router: Router
-    ) {}
-
+   
 }

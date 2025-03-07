@@ -1,7 +1,6 @@
 
 <div
     class="services-section bg-color pt-100 pb-70"
-    [ngClass]="{'bg-background': router.url === '/index-2', 'bg-transparent': router.url === '/index-5', 'd-none': router.url === '/index-4' || router.url === '/index-6' || router.url === '/index-7'}"
 >
     <div class="container">
         <div class="section-title">
@@ -11,9 +10,9 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="icon">
-                <i class="flaticon-it"></i>
+            <div class="single-services-box " style="height: 275px;">
+                <div class="flex items-center justify-center ">
+                <img src="images/modules/EHS.png" class="ml-4 h-8 w-16" alt="">
                 </div>
                 <h3>Safety</h3>
                 <p>Immediate reporting of health and safety concerns.</p>
@@ -22,9 +21,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-deb0fe">
-                <i class="flaticon-setting"></i>
-                </div>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/Quality.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
                 <h3>Quality</h3>
                 <p>Achieve quality that makes your customer smile</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
@@ -32,9 +31,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-79e8e2">
-                <i class="flaticon-promotion"></i>
-                </div>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/process.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
                 <h3>Process</h3>
                 <p>Make your processes 100 % compliant</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
@@ -42,9 +41,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-fcc774">
-                <i class="flaticon-cellphone"></i>
-                </div>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/5S.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
                 <h3>5S</h3>
                 <p>Make principle adherence on click.</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
@@ -52,9 +51,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-84b7fd">
-                <i class="flaticon-shopping-cart"></i>
-                </div>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/Gemba.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
                 <h3>Gemba Walk</h3>
                 <p>Capture your observations while you walk.</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
@@ -62,9 +61,9 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-fe929f">
-                <i class="flaticon-optimize"></i>
-                </div>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/Layer.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
                 <h3>LPA</h3>
                 <p>Confirm process adherence through different level audits</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
@@ -72,23 +71,33 @@
             </div>
             <div class="col-lg-4 col-md-6">
             <div class="single-services-box" style="height: 275px;">
-                <div class="icon">
-                <i class="flaticon-it"></i>
-                </div>
-                <h3>Customer</h3>
-                <p>Take complete control of customer observations</p>
+                <div class="flex items-center justify-center ">
+                    <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
+                    </div>
+                <h3>Supplier</h3>
+                <p>Ensure supplier quality that you expect</p>
                 <a routerLink="/service-details" class="read-btn">Read More</a>
             </div>
             </div>
             <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="icon bg-79e8e2">
-                <i class="flaticon-promotion"></i>
+                <div class="single-services-box" style="height: 275px;">
+                    <div class="flex items-center justify-center ">
+                        <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
+                        </div>
+                    <h3>Customer</h3>
+                    <p>Take complete control of customer observations</p>
+                    <a routerLink="/service-details" class="read-btn">Read More</a>
                 </div>
-                <h3>Process</h3>
-                <p>Make your processes 100 % compliant</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
             </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-services-box" style="height: 275px;">
+                    <div class="flex items-center justify-center ">
+                        <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
+                        </div>
+                    <h3>Inspection</h3>
+                    <p>No more hectic inspections</p>
+                    <a routerLink="/service-details" class="read-btn">Read More</a>
+                </div>
             </div>
         </div>
     </div>
@@ -101,7 +110,6 @@
     </div>
     <div
         class="services-shape"
-        [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3' || router.url === '/index-5'}"
     >
         <img src="images/cloud.png" alt="image">
     </div>
