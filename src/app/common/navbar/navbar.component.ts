@@ -1,47 +1,45 @@
-import { NgClass } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
-    imports: [RouterLink, RouterLinkActive, NgClass],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.scss'
+    standalone: true,
+    imports: [CommonModule, RouterModule],
+    templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
+    isSticky = false;
+    navbarToggleClassApplied = false;
 
-    constructor(
-        public router: Router
-    ) {}
+    navItems = [
+        { path: '/', label: 'Home' },
+        { path: '/about', label: 'About Us' },
+        { path: '/services-2', label: 'Services' },
+        { path: '/projects-2', label: 'Projects' },
+        { path: '/team', label: 'Team' },
+        { path: '/faq', label: 'FAQ' }
+    ];
 
-    // Navbar Sticky
-    isSticky: boolean = false;
-    @HostListener('window:scroll', ['$event'])
+    @HostListener('window:scroll')
     checkScroll() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        if (scrollPosition >= 50) {
-            this.isSticky = true;
-        } else {
-            this.isSticky = false;
+        this.isSticky = window.pageYOffset > 20;
+    }
+
+    @HostListener('window:resize')
+    checkResize() {
+        if (window.innerWidth > 1024) {
+            this.closeMenu();
         }
     }
 
-    // Navbar Toggle Class
-    navbarToggleClassApplied = false;
     navbarToggleClass() {
         this.navbarToggleClassApplied = !this.navbarToggleClassApplied;
+        document.body.style.overflow = this.navbarToggleClassApplied ? 'hidden' : '';
     }
 
-    // Search Toggle Class
-    searchClassApplied = false;
-    searchToggleClass() {
-        this.searchClassApplied = !this.searchClassApplied;
+    closeMenu() {
+        this.navbarToggleClassApplied = false;
+        document.body.style.overflow = '';
     }
-
-    // Sidebar Modal Toggle Class
-    sidebarModalClassApplied = false;
-    sidebarModalToggleClass() {
-        this.sidebarModalClassApplied = !this.sidebarModalClassApplied;
-    }
-
 }
