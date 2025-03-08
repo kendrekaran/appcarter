@@ -441,6 +441,247 @@
 
 }
 
+.services-section {
+    background-color: #f8f9fa;
+    padding: 100px 0 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    
+    h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: 700;
+      
+      span {
+        color: #0060df;
+      }
+    }
+    
+    p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #666;
+      line-height: 1.7;
+    }
+    
+    .bar {
+      height: 4px;
+      width: 60px;
+      background: #0060df;
+      margin: 20px auto 0;
+      position: relative;
+      border-radius: 2px;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 0;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: #0060df;
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        right: -15px;
+        top: 0;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: #0060df;
+      }
+    }
+  }
+  
+  // Services Filters
+  .services-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 15px;
+    
+    .search-container {
+      position: relative;
+      flex: 1;
+      max-width: 300px;
+      
+      .search-input {
+        width: 100%;
+        padding: 12px 20px 12px 40px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        background-color: white;
+        transition: all 0.3s;
+        font-size: 14px;
+        
+        &:focus {
+          outline: none;
+          border-color: #0060df;
+          box-shadow: 0 0 0 2px rgba(0, 96, 223, 0.1);
+        }
+      }
+      
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+      }
+    }
+    
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      
+      .filter-tab {
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: white;
+        border: 1px solid #e0e0e0;
+        color: #555;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: 500;
+        
+        &:hover {
+          background-color: #f1f5ff;
+          border-color: #c0d3ff;
+        }
+        
+        &.active {
+          background-color: #0060df;
+          color: white;
+          border-color: #0060df;
+        }
+      }
+    }
+    
+    .view-toggle {
+      display: flex;
+      gap: 5px;
+      
+      .toggle-btn {
+        padding: 8px;
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        transition: all 0.2s;
+        
+        &:hover {
+          background-color: #f1f5ff;
+        }
+        
+        &.active {
+          background-color: #0060df;
+          color: white;
+          border-color: #0060df;
+        }
+      }
+    }
+  }
+  
+  // No Results
+  .no-results {
+    text-align: center;
+    padding: 50px 0;
+    color: #666;
+    
+    svg {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+    
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    .reset-btn {
+      padding: 10px 20px;
+      background-color: #0060df;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+      
+      &:hover {
+        background-color: #0050bd;
+      }
+    }
+  }
+  
+  // Services Container
+  .services-container {
+    display: grid;
+    gap: 30px;
+    
+    &.grid-view {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    &.list-view {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Service Card
+  .service-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      
+      .read-more-btn {
+        color: #0060df;
+        
+        svg {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }  
+
 /* Min width 576px to Max width 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {}
 

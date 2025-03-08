@@ -14,6 +14,7 @@ export const routes: Routes = [
     {path: 'about', component: AboutPageComponent},
     {path: 'services-2', component: ServicesPage2Component},
     {path: 'projects-2', component: ProjectsPage2Component},
+
     {path: 'team', component: TeamPageComponent},
     {path: 'pricing', component: PricingPageComponent},
     {path: 'faq', component: FaqPageComponent},

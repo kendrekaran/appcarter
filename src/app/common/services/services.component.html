@@ -1,102 +1,19 @@
-
-<div
-    class="services-section bg-color pt-100 pb-70"
->
+<div class="services-section bg-color pt-100 pb-70">
     <div class="container">
         <div class="section-title">
-            <h2>Single <span>Platform</span> , Multiple <span>Audits</span> </h2>
+            <h2>Single <span>Platform</span> , Multiple <span>Audits</span></h2>
             <p>Our audit software platform is smart & intelligent which makes traditional audit process very Simple, Fast, Efficient & Accurate. It's an unique software platform which provides flexibility of managing many audit process through single login.</p>
             <div class="bar"></div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box " style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                <img src="images/modules/EHS.png" class="ml-4 h-8 w-16" alt="">
-                </div>
-                <h3>Safety</h3>
-                <p>Immediate reporting of health and safety concerns.</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/Quality.png" class="ml-4 h-8 w-16" alt="">
+            <div class="col-lg-4 col-md-6" *ngFor="let service of services">
+                <div class="single-services-box" style="height: 275px;" (click)="showServiceDetails(service)">
+                    <div class="flex items-center justify-center">
+                        <img [src]="service.icon" class="ml-4 h-8 w-16" [alt]="service.title">
                     </div>
-                <h3>Quality</h3>
-                <p>Achieve quality that makes your customer smile</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/process.png" class="ml-4 h-8 w-16" alt="">
-                    </div>
-                <h3>Process</h3>
-                <p>Make your processes 100 % compliant</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/5S.png" class="ml-4 h-8 w-16" alt="">
-                    </div>
-                <h3>5S</h3>
-                <p>Make principle adherence on click.</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/Gemba.png" class="ml-4 h-8 w-16" alt="">
-                    </div>
-                <h3>Gemba Walk</h3>
-                <p>Capture your observations while you walk.</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/Layer.png" class="ml-4 h-8 w-16" alt="">
-                    </div>
-                <h3>LPA</h3>
-                <p>Confirm process adherence through different level audits</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-            <div class="single-services-box" style="height: 275px;">
-                <div class="flex items-center justify-center ">
-                    <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
-                    </div>
-                <h3>Supplier</h3>
-                <p>Ensure supplier quality that you expect</p>
-                <a routerLink="/service-details" class="read-btn">Read More</a>
-            </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box" style="height: 275px;">
-                    <div class="flex items-center justify-center ">
-                        <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
-                        </div>
-                    <h3>Customer</h3>
-                    <p>Take complete control of customer observations</p>
-                    <a routerLink="/service-details" class="read-btn">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-services-box" style="height: 275px;">
-                    <div class="flex items-center justify-center ">
-                        <img src="images/modules/supplier.png" class="ml-4 h-8 w-16" alt="">
-                        </div>
-                    <h3>Inspection</h3>
-                    <p>No more hectic inspections</p>
-                    <a routerLink="/service-details" class="read-btn">Read More</a>
+                    <h3>{{service.title}}</h3>
+                    <p>{{service.description}}</p>
+                    <a class="read-btn">Read More</a>
                 </div>
             </div>
         </div>
@@ -108,10 +25,13 @@
         <div class="shape-4"><img src="images/shape/7.png" alt="image"></div>
         <div class="shape-5"><img src="images/shape/8.png" alt="image"></div>
     </div>
-    <div
-        class="services-shape"
-    >
+    <div class="services-shape">
         <img src="images/cloud.png" alt="image">
     </div>
 </div>
 
+<app-service-modal 
+    [service]="selectedService" 
+    [isOpen]="isModalOpen"
+    (modalClosed)="handleModalClose()"
+></app-service-modal>
