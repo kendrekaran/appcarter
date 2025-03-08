@@ -26,6 +26,10 @@ module.exports = {
       },
       minHeight: {
         '70vh': '70vh',
+      },
+      colors: {
+        primary: '#007bff', // Adjust to match your brand color
+        'primary-dark': '#0056b3',
       }
     }
   },
