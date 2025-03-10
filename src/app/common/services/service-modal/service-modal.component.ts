@@ -60,56 +60,10 @@ import { NgIf, NgFor } from '@angular/common';
           </div>
 
           <!-- Benefits Section -->
-          <div class="p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl shadow-sm">
-            <div class="flex items-center mb-6">
-              <div class="flex justify-center items-center mr-3 w-10 h-10 bg-blue-500 bg-opacity-10 rounded-full">
-                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800">Benefits</h3>
-            </div>
-            
-            <ul class="space-y-4">
-              <li class="flex items-center space-x-3 animate-fadeIn" style="animation-delay: 100ms">
-                <div class="flex justify-center items-center w-8 h-8 bg-blue-500 bg-opacity-10 rounded-full">
-                  <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <span class="text-gray-700">Improved efficiency and productivity</span>
-              </li>
-              <li class="flex items-center space-x-3 animate-fadeIn" style="animation-delay: 150ms">
-                <div class="flex justify-center items-center w-8 h-8 bg-blue-500 bg-opacity-10 rounded-full">
-                  <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <span class="text-gray-700">Real-time monitoring and reporting</span>
-              </li>
-              <li class="flex items-center space-x-3 animate-fadeIn" style="animation-delay: 200ms">
-                <div class="flex justify-center items-center w-8 h-8 bg-blue-500 bg-opacity-10 rounded-full">
-                  <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <span class="text-gray-700">Streamlined workflow management</span>
-              </li>
-            </ul>
-          </div>
+          
 
           <!-- Contact Section -->
-          <div class="p-6 mt-6 text-white bg-gradient-to-r rounded-xl shadow-lg from-primary to-primary-dark">
-            <div class="flex flex-col justify-between items-center space-y-4 md:flex-row md:space-y-0">
-              <div>
-                <h4 class="mb-1 text-xl font-semibold">Interested in this service?</h4>
-                <p class="text-white text-opacity-80">Contact us for more information</p>
-              </div>
-              <button class="px-6 py-3 bg-white rounded-full shadow-md transition-all transition-colors duration-200 transform text-primary hover:bg-gray-100 hover:shadow-lg hover:scale-105">
-                Contact Sales
-              </button>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

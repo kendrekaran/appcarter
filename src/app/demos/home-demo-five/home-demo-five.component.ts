@@ -4,12 +4,12 @@ import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from '../../common/footer/footer.component';
 import { BackToTopComponent } from '../../common/back-to-top/back-to-top.component';
 import { FeaturesComponent } from './features/features.component';
-import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from '../../common/services/services.component';
-import { MobileAppComponent } from '../../common/mobile-app/mobile-app.component';
+
 import { FunfactsComponent } from './funfacts/funfacts.component';
-import { TeamComponent } from '../../common/team/team.component';
+
 import { BenefitsComponent } from './benefits/benefits.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 

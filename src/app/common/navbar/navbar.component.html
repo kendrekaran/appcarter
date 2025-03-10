@@ -1,42 +1,35 @@
-<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm transition-all duration-300" 
+<nav class="fixed top-0 z-50 w-full backdrop-blur-sm transition-all duration-300 bg-white/95" 
      [ngClass]="{'shadow-lg': isSticky}">
-    <div class="container mx-auto px-4 lg:px-8">
+    <div class="container px-4 mx-auto lg:px-8">
         <div class="flex justify-between items-center h-20">
             <!-- Logo -->
             <a routerLink="/" class="flex items-center py-2">
                 <img src="images/logo.png" alt="logo" 
-                     class="h-8 w-48 sm:w-64 object-contain transition-transform duration-300 hover:scale-105"
+                     class="object-contain w-48 h-8 transition-transform duration-300 sm:w-64 hover:scale-105"
                      [ngClass]="{'h-7': isSticky}">
             </a>
 
             <!-- Main Navigation - Desktop -->
-            <div class="hidden lg:flex items-center space-x-1">
+            <div class="hidden items-center space-x-1 lg:flex">
                 <a *ngFor="let item of navItems" 
-                   [routerLink]="item.path"
-                   routerLinkActive="text-blue-600 bg-blue-50" 
-                   [routerLinkActiveOptions]="{exact: true}"
-                   class="px-4 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200">
+                   (click)="scrollToSection(item.fragment)"
+                   class="px-4 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-200 cursor-pointer hover:bg-gray-50 hover:text-blue-600">
                     {{item.label}}
                 </a>
                 
-                <!-- Contact Button -->
-                <a routerLink="/contact"
-                   class="ml-2 px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow">
-                    Contact Us
-                </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            <button class="p-2 rounded-lg transition-colors lg:hidden hover:bg-gray-100"
                     (click)="navbarToggleClass()">
-                <div class="w-6 h-6 relative">
-                    <span class="absolute w-6 h-0.5 bg-gray-600 transform transition-all duration-300"
+                <div class="relative w-6 h-6">
+                    <span class="absolute w-6 h-0.5 bg-gray-600 transition-all duration-300 transform"
                           [ngClass]="{'rotate-45 top-3': navbarToggleClassApplied, 'top-1': !navbarToggleClassApplied}">
                     </span>
-                    <span class="absolute w-6 h-0.5 bg-gray-600 top-3 transition-all duration-200"
+                    <span class="absolute top-3 w-6 h-0.5 bg-gray-600 transition-all duration-200"
                           [ngClass]="{'opacity-0': navbarToggleClassApplied}">
                     </span>
-                    <span class="absolute w-6 h-0.5 bg-gray-600 transform transition-all duration-300"
+                    <span class="absolute w-6 h-0.5 bg-gray-600 transition-all duration-300 transform"
                           [ngClass]="{'rotate-[-45deg] top-3': navbarToggleClassApplied, 'top-5': !navbarToggleClassApplied}">
                     </span>
                 </div>
@@ -49,17 +42,9 @@
          [ngClass]="{'block': navbarToggleClassApplied, 'hidden': !navbarToggleClassApplied}">
         <div class="px-4 py-3 space-y-1 bg-white border-t shadow-lg">
             <a *ngFor="let item of navItems"
-               [routerLink]="item.path"
-               routerLinkActive="text-blue-600 bg-blue-50"
-               [routerLinkActiveOptions]="{exact: true}"
-               (click)="closeMenu()"
-               class="block px-4 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200">
+               (click)="scrollToSection(item.fragment)"
+               class="block px-4 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-200 cursor-pointer hover:bg-gray-50 hover:text-blue-600">
                 {{item.label}}
-            </a>
-            <a routerLink="/contact"
-               (click)="closeMenu()"
-               class="block w-full mt-4 px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-                Contact Us
             </a>
         </div>
     </div>

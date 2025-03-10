@@ -18,8 +18,17 @@ export class AppComponent {
     ) {
         this.router.events.subscribe((event: Event) => {
             if (event instanceof NavigationEnd) {
-                // Scroll to the top after each navigation end
-                this.viewportScroller.scrollToPosition([0, 0]);
+                // Check if there's a fragment in the URL
+                const urlParts = event.urlAfterRedirects.split('#');
+                if (urlParts.length > 1 && urlParts[1]) {
+                    // If there's a fragment, scroll to that element
+                    setTimeout(() => {
+                        this.viewportScroller.scrollToAnchor(urlParts[1]);
+                    }, 100);
+                } else {
+                    // If no fragment, scroll to the top
+                    this.viewportScroller.scrollToPosition([0, 0]);
+                }
             }
         });
     }

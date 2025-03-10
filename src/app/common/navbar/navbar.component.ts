@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -13,13 +15,18 @@ export class NavbarComponent {
     navbarToggleClassApplied = false;
 
     navItems = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About Us' },
-        { path: '/services-2', label: 'Services' },
-        { path: '/projects-2', label: 'Projects' },
-        { path: '/team', label: 'Team' },
-        { path: '/faq', label: 'FAQ' }
+        { path: '/', label: 'Home', fragment: "home" },
+        { path: '/', label: 'Audits', fragment: 'audits' },
+        { path: '/', label: 'About', fragment: 'about' },
+        { path: '/', label: 'Features', fragment: 'features' },
+        { path: '/', label: 'Services', fragment: 'services' },
+        { path: '/', label: 'Contact Us', fragment: 'contact' }
     ];
+
+    constructor(
+        private viewportScroller: ViewportScroller,
+        private router: Router
+    ) {}
 
     @HostListener('window:scroll')
     checkScroll() {
@@ -41,5 +48,28 @@ export class NavbarComponent {
     closeMenu() {
         this.navbarToggleClassApplied = false;
         document.body.style.overflow = '';
+    }
+
+    scrollToSection(fragment: string | null) {
+        if (fragment) {
+            // First navigate to the home page if not already there
+            if (this.router.url !== '/') {
+                this.router.navigate(['/'], { fragment: fragment }).then(() => {
+                    // Give time for the page to load before scrolling
+                    setTimeout(() => {
+                        this.viewportScroller.scrollToAnchor(fragment);
+                    }, 100);
+                });
+            } else {
+                // If already on home page, just scroll to the section
+                this.viewportScroller.scrollToAnchor(fragment);
+            }
+        } else {
+            // If no fragment, navigate to the home page
+            this.router.navigate(['/']);
+        }
+        
+        // Close mobile menu if open
+        this.closeMenu();
     }
 }
