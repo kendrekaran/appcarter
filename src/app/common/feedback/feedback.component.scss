@@ -1,0 +1,154 @@
+.clients-section {
+    &.bg-background {
+        background: {
+            position: center center;
+            size: cover;
+            repeat: no-repeat;
+        };
+        .section-title {
+            h2 {
+                color: var(--white-color);
+            }
+            p {
+                color: var(--white-color);
+            }
+        }
+        .clients-slider {
+            .clients-item {
+                p {
+                    color: var(--white-color);
+                }
+                .clients-content {
+                    h3 {
+                        color: var(--white-color);
+                    }
+                    span {
+                        color: var(--white-color);
+                    }
+                }
+            }
+        }
+        
+    }
+}
+.clients-item {
+    text-align: center;
+
+    .icon {
+        i {
+            display: inline-block;
+            height: 80px;
+            width: 80px;
+            line-height: 80px;
+            background-color: var(--main-color);
+            color: var(--white-color);
+            font-size: 40px;
+            border-radius: 50px;
+        }
+    }
+    p {
+        margin-top: 20px;
+        font: {
+            style: italic;
+            size: 17px;
+        };
+    }
+    .clients-content {
+        margin-top: 65px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 30px;
+            background-color: var(--main-color);
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: rotate(90deg);
+            top: -35px;
+        }
+        h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        span {
+            color: var(--main-font-family);
+        }
+    }
+}
+::ng-deep {
+    .clients-slider {
+        .owl-theme {
+            max-width: 720px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+            .owl-dots {
+                line-height: 1;
+    
+                .owl-dot {
+                    span {
+                        width: 13px;
+                        height: 13px;
+                        margin: 0 5px;
+                        background: #c8c3c3;
+                        transition: var(--transition);
+                        border-radius: 50%;
+                        transform: scale(.9);
+                    }
+                    &:hover, &.active {
+                        span {
+                            background-color: var(--main-color);
+                        }
+                    }
+                    &.active {
+                        span {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .clients-item {
+        .clients-content {
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+    ::ng-deep {
+        .clients-slider {
+            .owl-theme {
+                max-width: 100%;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

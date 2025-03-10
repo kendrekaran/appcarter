@@ -20,6 +20,7 @@ export class NavbarComponent {
         { path: '/', label: 'About', fragment: 'about' },
         { path: '/', label: 'Features', fragment: 'features' },
         { path: '/', label: 'Services', fragment: 'services' },
+        { path: '/', label: 'Testimonials', fragment: 'feedback' },
         { path: '/', label: 'Contact Us', fragment: 'contact' }
     ];
 
