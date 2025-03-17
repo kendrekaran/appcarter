@@ -34,7 +34,7 @@ export class BenefitsComponent {
                 'Regular maintenance'
             ],
             icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
-            gradient: 'from-purple-600 to-pink-500'
+            gradient: 'from-blue-600 to-cyan-500'
         },
         {
             title: 'OpEx Services',
@@ -47,7 +47,7 @@ export class BenefitsComponent {
                 'Continuous improvement'
             ],
             icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-            gradient: 'from-green-600 to-teal-500'
+            gradient: 'from-blue-600 to-cyan-500'
         }
     ];
 }
