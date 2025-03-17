@@ -13,9 +13,11 @@ import { FunfactsComponent } from './funfacts/funfacts.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FeedbackComponent } from '../../common/feedback/feedback.component';
+import { OurClientsComponent } from '../../components/our-clients/our-clients.component';
 
 @Component({
     selector: 'app-home-demo-five',
+    standalone: true,
     imports: [
         NavbarComponent, 
         BannerComponent, 
@@ -26,7 +28,8 @@ import { FeedbackComponent } from '../../common/feedback/feedback.component';
         BackToTopComponent, 
         BenefitsComponent,
         ContactUsComponent,
-        FeedbackComponent
+        FeedbackComponent,
+        OurClientsComponent
     ],
     templateUrl: './home-demo-five.component.html',
     styleUrl: './home-demo-five.component.scss'
