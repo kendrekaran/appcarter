@@ -1,14 +1,23 @@
 .our-clients-area {
   background-color: #f9f9f9;
   overflow: hidden;
+  padding: 40px 0;
+  
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 20px 0;
+  }
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   
   h2 {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 15px;
     font-weight: 700;
   }
@@ -17,6 +26,33 @@
     color: #666;
     max-width: 650px;
     margin: 0 auto;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+    
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 16px;
+      padding: 0 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 14px;
+    }
   }
 }
 
@@ -24,12 +60,29 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  padding: 10px 0;
+  
+  @media (max-width: 768px) {
+    padding: 15px 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 10px 0;
+  }
 }
 
 .logo-slider {
   display: flex;
   width: 200%;
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
+  
+  @media (max-width: 768px) {
+    animation: scroll 30s linear infinite;
+  }
+  
+  @media (max-width: 480px) {
+    animation: scroll 20s linear infinite;
+  }
 }
 
 .logo-slide {
@@ -38,22 +91,46 @@
 }
 
 .logo-wrapper {
-  flex: 0 0 calc(100% / 6);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
+  
+  @media (max-width: 992px) {
+    flex: 0 0 calc(100% / 5);
+    padding: 12px;
+  }
+  
+  @media (max-width: 768px) {
+    flex: 0 0 calc(100% / 2);
+    padding: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    flex: 0 0 100%;
+    padding: 8px;
+  }
 }
 
 .client-logo {
-  max-width: 150px;
-  height: auto;
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
+  max-width: 400px;
+  height: 200px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   
-  &:hover {
-    filter: grayscale(0%);
-    transform: scale(1.1);
+  @media (max-width: 992px) {
+    max-width: 160px;
+    height: 160px;
+  }
+  
+  @media (max-width: 768px) {
+    max-width: 140px;
+    height: 140px;
+  }
+  
+  @media (max-width: 480px) {
+    max-width: 120px;
+    height: 120px;
   }
 }
 
@@ -66,23 +143,40 @@
   }
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .logo-wrapper {
-    flex: 0 0 calc(100% / 3);
+    flex: 50 50 calc(100% / 100);
+    padding: 0px;  // Reduced padding
   }
   
   .client-logo {
-    max-width: 120px;
+    max-width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-wrapper {
+    flex: 0 0 calc(100% / 2);
+    padding: 8px;  // Reduced padding
+  }
+  
+  .client-logo {
+    max-width: 140px;
+    height: 140px;
+    margin: 0 5px;  // Added small margin
   }
 }
 
 @media (max-width: 480px) {
   .logo-wrapper {
-    flex: 0 0 calc(100% / 2);
+    flex: 0 0 10%;  // Changed to show 2 logos per row
+    padding: 5px;  // Reduced padding further
   }
   
   .client-logo {
-    max-width: 100px;
+    max-width: 100px;  // Reduced size
+    height: 100px;  // Reduced size
+    margin: 0 3px;  // Smaller margin
   }
-} 
+}
