@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from '../../common/navbar/navbar.component';
 
 @Component({
-  selector: 'app-our-clients',
+  selector: 'app-all-clients',
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './our-clients.component.html',
-  styleUrls: ['./our-clients.component.scss']
+  imports: [CommonModule, RouterModule, NavbarComponent],
+  templateUrl: './all-clients.component.html',
+  styleUrls: ['./all-clients.component.scss']
 })
-export class OurClientsComponent implements OnInit {
+export class AllClientsComponent implements OnInit {
   clientLogos: string[] = [];
-  previewLogos: string[] = [];
 
   constructor() { }
 
@@ -35,9 +35,6 @@ export class OurClientsComponent implements OnInit {
       'assets/Client-logo/15.png',
       'assets/Client-logo/16.png',
     ];
-
-    // Show only first 8 logos in the preview
-    this.previewLogos = this.clientLogos.slice(0, 4);
   }
 
   handleImageError(event: any): void {
@@ -56,4 +53,4 @@ export class OurClientsComponent implements OnInit {
       img.src = 'assets/placeholder-logo.png';
     }
   }
-} 
+}

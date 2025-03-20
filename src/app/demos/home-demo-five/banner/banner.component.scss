@@ -1,3 +1,6 @@
+button {
+  border-radius: 50px;  /* Overriding Tailwind's rounded-xl */
+}
 
 
 .main-banner-area-five {
@@ -8,6 +11,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   .main-banner-content {
       position: relative;
@@ -15,31 +19,15 @@
       max-width: 635px;
       overflow: hidden;
 
-      h1 {
-          font-size: 70px;
-          margin: 10px 0 15px 0;
-          color: var(--black-color);
-          line-height: 1.2;
-          font-weight: 400;
-      }
       span {
           font-size: 16px;
           font-weight: 200;
           color: var(--black-color);
           display: block;
       }
-      p {
-          color: var(--black-color);
-          margin-bottom: 0;
-          font-size: 16px;
-          line-height: 1.6;
-      }   
       .banner-btn {
-          margin-top: 30px;
           
           .default-btn {
-              padding: 15px 35px;
-              border-radius: 30px;
               position: relative;
               transition: all 0.3s ease;
               font-weight: 600;
@@ -74,14 +62,14 @@
       }
   }
   .banner-image {
-      margin-top: 180px;
-      text-align: end;
+      margin-top: 100px;
+      text-align: center;
       position: relative;
       overflow: hidden;
       
       img {
           transition: transform 0.5s ease;
-          max-width: 100%;
+          max-width: 1000px;
           height: auto;
       }
   }

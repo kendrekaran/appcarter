@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="all-clients-area ptb-100">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Trusted Clients</h2>
+      <p>All the companies that trust and work with us</p>
+    </div>
+
+    <div class="back-link">
+      <a [routerLink]="['']" class="back-btn">« Back to Home</a>
+    </div>
+
+    <div class="clients-grid-container">
+      <div class="logos-grid">
+        <div class="logo-item" *ngFor="let logo of clientLogos">
+          <img [src]="logo" alt="Client Logo" class="client-logo" 
+               (error)="handleImageError($event)" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

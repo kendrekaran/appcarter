@@ -33,5 +33,6 @@ module.exports = {
       }
     }
   },
+  safelist: ["rounded-xl", "rounded-[12px]"],
   plugins: []
 }

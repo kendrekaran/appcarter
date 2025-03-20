@@ -5,20 +5,16 @@
       <p>Companies that trust and work with us</p>
     </div>
 
-    <div class="clients-logo-container">
-      <div class="logo-slider">
-        <div class="logo-slide">
-          <div class="logo-wrapper" *ngFor="let logo of clientLogos">
-            <img [src]="logo" alt="Client Logo" class="client-logo" 
-                 (error)="handleImageError($event)">
-          </div>
+    <div class="clients-preview-container">
+      <div class="logos-grid">
+        <div class="logo-item" *ngFor="let logo of previewLogos">
+          <img [src]="logo" alt="Client Logo" class="client-logo" 
+               (error)="handleImageError($event)" loading="lazy">
         </div>
-        <div class="logo-slide">
-          <div class="logo-wrapper" *ngFor="let logo of clientLogos">
-            <img [src]="logo" alt="Client Logo" class="client-logo"
-                 (error)="handleImageError($event)">
-          </div>
-        </div>
+      </div>
+      
+      <div class="view-all-container">
+        <a [routerLink]="['/all-clients']" class="view-all-btn">View All Clients</a>
       </div>
     </div>
   </div>
